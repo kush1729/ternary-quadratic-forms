@@ -8,3 +8,4 @@ The python files may be used by either importing them and then using the functio
 
 The python programs have been implemented in Python 2.7, while the C++ programs have been implemented in C++14.
 
+Any further questions do not hesitate to email me.
