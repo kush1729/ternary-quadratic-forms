@@ -1,3 +1,10 @@
-Some companion files for my paper on ternary quadratic forms with congruence conditions.
+Some companion files for my paper on ternary quadratic forms with congruence conditions. The paper may be found on the arXiv at: 
 
-The paper may be found on the arXiv at: 
+The file "Identity Checker.cpp" is, as the name suggests, the program used to check whether an identity in r_{a,h,N}(n) and r_{a}(n) holds. While the algorithm used itself is the naive brute-force approach. However, since it has been implemented in C++ using multithreading, it is fairly quick. Thus, if don't check those n for which r_{a,h,N}(n) is zero due to elementary congruence conditions, we can reduce runtime even more. For instance, for a=(1,1,1), h=(1,0,0), and N=4, we know that a square is either 1 mod 8 if it is odd, and is 0 mod 8 if it is divisible by 4. Thus x^2+y^2+z^2 will always be 1 modulo 8, and so r_{a,h,4}(n)=0 for all n != 1 mod 8. Using such simple elementary arguments, one can check upto a billion coefficients within a day, depending on the system of course. 
+
+The remaining files can be used to classify the genus of a lattice coset. The "genus_enumerator.py" classifies the genus according to the algorithm described in Section 4.1 of my paper. For calculating the groups G_{L,q',q} of matrices modulo q, the C++ file "p-adic_matrices_calculator_multithread.cpp" should be used. The algorithm used is the again the brute-force approach outlined in Section 4.1. The program "reduce_p_adic_files.py" is useful to evaluate G_{L, q', q} for small q and q', whenever the corresponding group G_{L, Q',Q} has already been computed for larger Q (q|Q). This program simply goes through each matrix in the larger group and reduces it modulo q, and can be used to save on otherwise time-expensive computations. The file "advanced_math_functions.py" only contains some auxiliary functions and may be ignored (though should always be kept in the same folder as "genus_enumerator.py").
+
+The python files may be used by either importing them and then using the functions, or running them directly by editing the inputs in the "if __name__ == '__main__':" block. The input formats should be fairly self-descriptive. Input for the C++ files may be piped using a .txt file; the format of this .txt file has been described in some detail inside the corresponding ".cpp" files.
+
+The python programs have been implemented in Python 2.7, while the C++ programs have been implemented in C++14.
+
