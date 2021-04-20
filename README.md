@@ -1,4 +1,4 @@
-Some companion files for my paper on ternary quadratic forms with congruence conditions. The paper may be found on the arXiv at: 
+Some companion files for my paper on ternary quadratic forms with congruence conditions. The paper may be found on the arXiv at: https://arxiv.org/abs/2104.08798
 
 The file "Identity Checker.cpp" is, as the name suggests, the program used to check whether an identity in r_{a,h,N}(n) and r_{a}(n) holds. While the algorithm used itself is the naive brute-force approach. However, since it has been implemented in C++ using multithreading, it is fairly quick. Thus, if don't check those n for which r_{a,h,N}(n) is zero due to elementary congruence conditions, we can reduce runtime even more. For instance, for a=(1,1,1), h=(1,0,0), and N=4, we know that a square is either 1 mod 8 if it is odd, and is 0 mod 8 if it is divisible by 4. Thus x^2+y^2+z^2 will always be 1 modulo 8, and so r_{a,h,4}(n)=0 for all n != 1 mod 8. Using such simple elementary arguments, one can check upto a billion coefficients within a day, depending on the system of course. 
 
